@@ -10,6 +10,9 @@ See the `index.js` for the example source code.
 The below shell snippet shows how to deploy this on your own Heroku. Note the usage of environment variables to pass the SnapSearch API credentials.
 
 ```sh
+# clone the project
+git clone https://github.com/SnapSearch/SnapSearch-Client-Node-Heroku-Demo.git
+
 # get into the project's directory
 cd SnapSearch-Client-Node-Heroku-Demo
 
