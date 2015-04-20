@@ -10,18 +10,23 @@ app.enable('trust proxy');
 app.use(snapsearch.connect(
     new snapsearch.Interceptor(
         new snapsearch.Client(
-            'william@the-newshub.com', 
-            '327UomZfp2j8y1JCz87p3Sm2xfg71vggLbC0E9G2NA1FQIT2yC', 
+            process.env.SNAPEMAIL, 
+            process.env.SNAPKEY, 
             {}, 
             function (error, debugging) {
-                //custom exception handling
+
+                console.log('Oh no SnapSearch node client met an error while trying to intercept the request!');
                 console.log(error);
                 console.log(debugging);
+
             }
         ),
         new snapsearch.Detector([], [], false, true)
     ),
     function (data) {
+
+        console.log('SnapSearch node client successfully intercepted a robot!');
+        console.log('We are not returning the scraped snpashot from SnapSearch API.');
 
         //return an object for custom response handling
         return {
@@ -34,9 +39,9 @@ app.use(snapsearch.connect(
 ));
 
 app.get('/', function (req, res) {
-    res.send('Was not a robot and we are here inside app');
+    res.send('Some static content. <script>document.write("Some javascript injected content, only viewable with SnapSearch!");</script>');
 });
 
 app.listen(app.get('port'), function () {
-    console.log('Server running at localhost:' + app.get('port'));
+    console.log('SnapSearch demo running on localhost:' + app.get('port'));
 });
