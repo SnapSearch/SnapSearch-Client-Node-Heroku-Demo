@@ -3,6 +3,8 @@ var snapsearch = require('snapsearch-client-nodejs');
 
 var app = express();
 
+app.set('port', (process.env.PORT || 1337));
+
 app.enable('trust proxy');
 
 app.use(snapsearch.connect(
@@ -35,6 +37,6 @@ app.get('/', function (req, res) {
     res.send('Was not a robot and we are here inside app');
 });
 
-app.listen(1337);
-
-console.log('Server running at http://127.0.0.1:1337/');
+app.listen(app.get('port'), function () {
+    console.log('Server running at localhost:' + app.get('port'));
+});
