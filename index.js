@@ -26,7 +26,7 @@ app.use(snapsearch.connect(
     function (data) {
 
         console.log('SnapSearch node client successfully intercepted a robot!');
-        console.log('We are not returning the scraped snpashot from SnapSearch API.');
+        console.log('We are returning the scraped snapshot from the SnapSearch API.');
 
         //return an object for custom response handling
         return {
@@ -39,7 +39,7 @@ app.use(snapsearch.connect(
 ));
 
 app.get('/', function (req, res) {
-    res.send('Some static content. <script>document.write("Some javascript injected content, only viewable with SnapSearch!");</script>');
+    res.send('Some static content. <script>document.write("Some javascript injected content, only viewable with SnapSearch and JavaScript enabled clients!");</script>');
 });
 
 app.listen(app.get('port'), function () {
