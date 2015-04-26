@@ -12,7 +12,7 @@ app.enable('trust proxy');
 
 app.use(logger('dev'));    // will log out incoming requests
 app.use(methodOverride()); // augments the req.method with non-standard PUT & DELETE
-app.use(compress());       // condtionally gzip compresses the response body
+app.use(compress());       // conditionally gzip compresses the response body
 
 // the snapsearch middleware should be after any kind of augmentation of the request or response
 // in fact it should be as close to kernel of your software as possible
