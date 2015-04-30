@@ -31,7 +31,9 @@ app.use(snapsearch.connect(
 
             }
         ),
-        new snapsearch.Detector([], [], false, true)
+        new snapsearch.Detector([
+            '/sitemap.xml'
+        ], [], false, true)
     ),
     function (data) {
 
