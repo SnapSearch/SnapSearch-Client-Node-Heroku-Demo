@@ -78,6 +78,8 @@ app.use(snapsearch.connect(
     }
 ));
 
+app.use(express.static('public'));
+
 app.get('/', function (req, res) {
 
     // content-type and content-length is required in order to trigger compression
