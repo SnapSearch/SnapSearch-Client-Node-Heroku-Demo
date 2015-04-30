@@ -32,7 +32,7 @@ app.use(snapsearch.connect(
             }
         ),
         new snapsearch.Detector([
-            '/sitemap.xml'
+            '^/public/' // do not intercept non-html content, it will clobber the content! (start your regexes at the root URL path)
         ], [], false, true)
     ),
     function (data) {
@@ -80,7 +80,9 @@ app.use(snapsearch.connect(
     }
 ));
 
-app.use(express.static('public'));
+// testing the presence of non-html resources like sitemaps
+// these resources need to be ignored, as intercepting them will clobber the faithful snapshot
+app.use('/public', express.static('public'));
 
 app.get('/', function (req, res) {
 
