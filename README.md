@@ -42,3 +42,9 @@ curl -A "Googlebot" https://snapsearch-demo-X.herokuapp.com/
 # check the logs
 heroku logs
 ```
+
+Special Features of this Demo:
+
+* Shows how to make the compression middleware work with SnapSearch!
+* Shows how to deal with non-html resources such as sitemaps!
+* Shows how to make it work in Heroku!
