@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "snapsearch-client-nodejs": "~1.1.5",
+    "snapsearch-client-nodejs": "~1.1.6",
     "express": "~4.2.0",
     "morgan": "~1.5.2",
     "compression": "~1.4.3",
